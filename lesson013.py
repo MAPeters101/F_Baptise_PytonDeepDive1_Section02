@@ -60,6 +60,25 @@ for i in range(5):
         print('Always runs.')
     print(i)
 
+s = 'hello'
+for c in s:
+    print(c)
+
+s = 'hello'
+i = 0
+for c in s:
+    print(i, c)
+    i += 1
+
+s = 'hello'
+for i in range(len(s)):
+    print(i, s[i])
+
+s = 'hello'
+for i, c in enumerate(s):
+    print(i, c)
+
+
 
 
 
