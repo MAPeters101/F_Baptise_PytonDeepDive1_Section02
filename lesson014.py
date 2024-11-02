@@ -19,9 +19,11 @@ class Rectangle:
         return 'Rectangle({0}, {1})'.format(self.width, self.height)
 
     def __eq__(self, other):
-        #return self.width == other.width and self.height == other.height
-        return (self.width, self.height) == (other.width, other.height)
-
+        if isinstance(other, Rectangle):
+            #return self.width == other.width and self.height == other.height
+            return (self.width, self.height) == (other.width, other.height)
+        else:
+            return False
 
 
 r1 = Rectangle(10, 20)
@@ -43,5 +45,6 @@ r2 = Rectangle(10, 20)
 
 print(r1 is not r2)
 print(r1 == r2)
+print(r1 == 100)
 
 
