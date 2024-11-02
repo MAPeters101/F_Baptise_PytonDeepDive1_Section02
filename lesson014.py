@@ -25,6 +25,12 @@ class Rectangle:
         else:
             return False
 
+    def __lt__(self, other):
+        if isinstance(other, Rectangle):
+            return self.area() < other.area()
+        else:
+            return NotImplemented
+
 
 r1 = Rectangle(10, 20)
 print(r1.width)
@@ -46,5 +52,10 @@ r2 = Rectangle(10, 20)
 print(r1 is not r2)
 print(r1 == r2)
 print(r1 == 100)
+print('='*10)
+r1 = Rectangle(10, 20)
+r2 = Rectangle(100, 200)
 
-
+print(r1<r2)
+print(r2<r1)
+print(r2>r1)
