@@ -19,7 +19,7 @@ while a < 4:
         a/b
     except ZeroDivisionError:
         print('{0}, {1} - Division by 0'.format(a, b))
-        continue
+        break
     finally:
         print('{0}, {1} - This always executes'.format(a, b))
 
