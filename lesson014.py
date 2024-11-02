@@ -15,6 +15,13 @@ class Rectangle:
     def __str__(self):
         return 'Rectangle: width={0}, height={1}'.format(self.width, self.height)
 
+    def __repr__(self):
+        return 'Rectangle({0}, {1})'.format(self.width, self.height)
+
+    def __eq__(self, other):
+        #return self.width == other.width and self.height == other.height
+        return (self.width, self.height) == (other.width, other.height)
+
 
 
 r1 = Rectangle(10, 20)
@@ -30,9 +37,11 @@ print(r1.perimeter())
 print(str(r1))
 
 print(r1.to_string())
+print(r1.__repr__())
 
+r2 = Rectangle(10, 20)
 
-
-
+print(r1 is not r2)
+print(r1 == r2)
 
 
