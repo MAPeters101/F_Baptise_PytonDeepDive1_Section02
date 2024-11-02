@@ -10,7 +10,7 @@ finally:
 
 
 a = 0
-b = 2
+b = 10
 while a < 4:
     print('-'*10)
     a += 1
@@ -24,4 +24,6 @@ while a < 4:
         print('{0}, {1} - This always executes'.format(a, b))
 
     print('{0}, {1} - Main loop'.format(a, b))
+else:
+    print('Code executed without a zero division error.')
 
