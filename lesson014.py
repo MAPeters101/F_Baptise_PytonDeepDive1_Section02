@@ -1,27 +1,36 @@
 class Rectangle:
     def __init__(self, width, height):
-        self.width = width
-        self.height = height
+        self._width = width
+        self._height = height
+
+    def get_width(self):
+        return self._width
+
+    def set_width(self, width):
+        if width <= 0:
+            raise ValueError("Width must be positive.")
+        else:
+            self._width = width
 
     def area(self):
-        return self.width * self.height
+        return self._width * self._height
 
     def perimeter(self):
-        return 2 * (self.width + self.height)
+        return 2 * (self._width + self._height)
 
     def to_string(self):
-        return 'Rectangle: width={0}, height={1}'.format(self.width, self.height)
+        return 'Rectangle: width={0}, height={1}'.format(self._width, self._height)
 
     def __str__(self):
-        return 'Rectangle: width={0}, height={1}'.format(self.width, self.height)
+        return 'Rectangle: width={0}, height={1}'.format(self._width, self._height)
 
     def __repr__(self):
-        return 'Rectangle({0}, {1})'.format(self.width, self.height)
+        return 'Rectangle({0}, {1})'.format(self._width, self._height)
 
     def __eq__(self, other):
         if isinstance(other, Rectangle):
             #return self.width == other.width and self.height == other.height
-            return (self.width, self.height) == (other.width, other.height)
+            return (self._width, self._height) == (other._width, other._height)
         else:
             return False
 
@@ -31,12 +40,6 @@ class Rectangle:
         else:
             return NotImplemented
 
-
-r1 = Rectangle(10, 20)
-print(r1.width)
-r1.width = 100
-print(r1.width)
-print(r1.height)
 
 r1 = Rectangle(10, 20)
 print(r1.area())
@@ -59,11 +62,15 @@ r2 = Rectangle(100, 200)
 print(r1<r2)
 print(r2<r1)
 print(r2>r1)
-
+print('-'*10)
 r1 = Rectangle(10,20)
-print(r1.width)
+#print(r1.width)
 r1.width = -100
 print(r1.width)
+#r1.set_width(-200)
+print(r1.get_width())
+r1.set_width(200)
+print(r1.get_width())
 
 
 
