@@ -59,3 +59,12 @@ r2 = Rectangle(100, 200)
 print(r1<r2)
 print(r2<r1)
 print(r2>r1)
+
+r1 = Rectangle(10,20)
+print(r1.width)
+r1.width = -100
+print(r1.width)
+
+
+
+
