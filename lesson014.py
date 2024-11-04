@@ -1,7 +1,32 @@
+from multiprocessing.managers import Value
+
+
 class Rectangle:
     def __init__(self, width, height):
-        self.width = width
-        self.height = height
+        self._width = width
+        self._height = height
+
+    @property
+    def width(self):
+        return self._width
+
+    @width.setter
+    def width(self, width):
+        if width <= 0:
+            raise ValueError('Width must be positive.')
+        else:
+            self._width = width
+
+    @property
+    def height(self):
+        return self._height
+
+    @height.setter
+    def height(self, height):
+        if height <= 0:
+            raise ValueError('Height must be positive.')
+        else:
+            self._height = height
 
     def area(self):
         return self.width * self.height
@@ -56,7 +81,8 @@ print(r2>r1)
 print('-'*10)
 r1 = Rectangle(10,20)
 print(r1.width)
-r1.width = -100
+#r1.width = -100
+r1.width = 100
 print(r1.width)
 
 
