@@ -1,36 +1,27 @@
 class Rectangle:
     def __init__(self, width, height):
-        self._width = width
-        self._height = height
-
-    def get_width(self):
-        return self._width
-
-    def set_width(self, width):
-        if width <= 0:
-            raise ValueError("Width must be positive.")
-        else:
-            self._width = width
+        self.width = width
+        self.height = height
 
     def area(self):
-        return self._width * self._height
+        return self.width * self.height
 
     def perimeter(self):
-        return 2 * (self._width + self._height)
+        return 2 * (self.width + self.height)
 
     def to_string(self):
-        return 'Rectangle: width={0}, height={1}'.format(self._width, self._height)
+        return 'Rectangle: width={0}, height={1}'.format(self.width, self.height)
 
     def __str__(self):
-        return 'Rectangle: width={0}, height={1}'.format(self._width, self._height)
+        return 'Rectangle: width={0}, height={1}'.format(self.width, self.height)
 
     def __repr__(self):
-        return 'Rectangle({0}, {1})'.format(self._width, self._height)
+        return 'Rectangle({0}, {1})'.format(self.width, self.height)
 
     def __eq__(self, other):
         if isinstance(other, Rectangle):
             #return self.width == other.width and self.height == other.height
-            return (self._width, self._height) == (other._width, other._height)
+            return (self.width, self.height) == (other.width, other.height)
         else:
             return False
 
@@ -64,13 +55,9 @@ print(r2<r1)
 print(r2>r1)
 print('-'*10)
 r1 = Rectangle(10,20)
-#print(r1.width)
+print(r1.width)
 r1.width = -100
 print(r1.width)
-#r1.set_width(-200)
-print(r1.get_width())
-r1.set_width(200)
-print(r1.get_width())
 
 
 
